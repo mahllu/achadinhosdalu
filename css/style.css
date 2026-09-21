@@ -1,0 +1,361 @@
+body {
+    background-color: #dcdce9;
+}
+
+h1  { 
+    color:  black;
+    font-family:  'Playfair Display', serif;
+    text-align: center;
+    font-size: 25px;
+}
+.descricao {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    margin: 8px auto 0;
+}
+.foto-lu {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 30px auto 15px;
+}
+.lupa {
+    width: 18px;
+    height: 18px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    flex: 0 0 18px;
+    box-sizing: border-box;
+
+}
+
+.lupa::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 2px;
+    background-color:black;
+    right: -5px;
+    bottom: -2px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+
+}
+.barra-busca {
+    width: 70%;
+    max-width: 700px;
+    height: 56px;
+    margin: 35px auto 0;
+    background-color:#A59281;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 25px;
+    box-sizing: border-box;
+
+}
+.barra-busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Segoe UI', sans-serif;
+    font-size:16px;
+    color: black;
+}
+ .barra-busca input::placeholder {
+    color: #4a4a4a;
+    opacity: 1;
+    
+}
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    background: transparent;
+    border: none;
+
+    font-size: 22px;
+    color: #333333;
+    cursor: pointer;
+
+    z-index: 1001;
+}
+
+/* MENU LATERAL */
+.menu-categorias {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background-color: #A59281;
+    color: white;
+
+    padding: 60px 16px 24px;
+    box-sizing: border-box;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* QUANDO CLICAR NO ☰ */
+.menu-categorias.ativo {
+    transform: translateX(0);
+}
+
+/* TÍTULO */
+.menu-topo h2 {
+    margin: 0 0 28px 0;
+
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    color: white;
+}
+
+/* GRUPOS */
+.grupo-menu {
+    margin-bottom: 22px;
+}
+
+.grupo-menu h3 {
+    margin: 0 0 8px 0;
+
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: white;
+}
+
+/* CATEGORIAS */
+.item-menu {
+    display: block;
+
+    padding: 10px 12px;
+    margin-bottom: 5px;
+
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+/* ITEM SELECIONADO */
+.item-menu.ativo {
+    background-color: #8F7C6C;
+    color: white;
+}
+
+/* PASSAR O MOUSE */
+.item-menu:hover {
+    background-color: #978373;
+}
+.produtos {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 20px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    gap: 25px;
+
+    justify-content: start;
+
+}
+.produto {
+    width: 300px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.produto-info {
+    padding: 22px;
+}
+
+.produto-categoria {
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #A59281;
+    margin-bottom: 6px;
+}
+
+.produto-loja {
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 6px;
+}
+
+.produto h3 {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 17px;
+    color: #111111;
+}
+
+.produto-preco {
+    margin: 30px 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #A59281;
+}
+
+.botao-oferta {
+    display: block;
+    margin-top: 20px;
+    padding: 15px;
+
+    background-color: #A59281;
+    color: white;
+
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.botao-oferta:hover {
+    background-color: #8F7C6C;
+}
+.produto img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+.titulo-secao {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 70px auto 20px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #111111;
+    text-align: center;
+}
+/* =========================
+   VERSÃO PARA CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Foto da Lu */
+    .foto-lu {
+        width: 110px;
+        height: 110px;
+        margin-top: 30px;
+    }
+
+    /* Título principal */
+    h1 {
+        font-size: 28px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* Frase abaixo do título */
+    .descricao {
+        width: 90%;
+        margin: 15px auto 0;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* Barra de pesquisa */
+    .barra-busca {
+        width: 90%;
+        height: 58px;
+        margin: 35px auto 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .barra-busca input {
+        font-size: 15px;
+        min-width: 0;
+    }
+
+    /* ROUPAS SHEIN */
+    .titulo-secao {
+        width: 90%;
+        margin: 60px auto 20px;
+        font-size: 24px;
+        text-align: left;
+    }
+
+    /* Área dos produtos */
+    .produtos {
+        width: 90%;
+        margin: 25px auto 50px;
+
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        justify-items: center;
+    }
+
+    /* Cada card */
+    .produto {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* Foto do produto */
+    .produto img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+
+    /* Conteúdo do card */
+    .produto-info {
+        padding: 20px;
+    }
+
+    .produto-preco {
+        font-size: 21px;
+    }
+
+    .botao-oferta {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
