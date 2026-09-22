@@ -99,7 +99,14 @@ formProduto.addEventListener('submit', async function (event) {
     const nome = document.querySelector('#nome').value;
     const preco = document.querySelector('#preco').value;
     const loja = document.querySelector('#loja').value;
-    const categoria = document.querySelector('#categoria').value;
+    const categoriasSelecionadas =
+    document.querySelectorAll('input[name="categoria"]:checked');
+
+const categoria = Array.from(categoriasSelecionadas)
+    .map(function (item) {
+        return item.value;
+    })
+    .join(' ');
     const link = document.querySelector('#link').value;
 
     if (!imagem) {
