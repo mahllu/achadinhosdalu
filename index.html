@@ -12,7 +12,7 @@
     <nav class="menu-categorias">
 
     <div class="menu-topo">
-        <h2>Achadinhos da Lu</h2>
+        <h2>Categorias</h2>
     </div>
 
     <div class="grupo-menu">
@@ -22,13 +22,13 @@
 
     <div class="grupo-menu">
         <h3>Vitrine</h3>
-        <a href="#" class="item-menu">Roupas</a>
-        <a href="#" class="item-menu">Conjuntos</a>
-        <a href="#" class="item-menu">Beleza</a>
-        <a href="#" class="item-menu">Casa</a>
-        <a href="#" class="item-menu">Produtinhos</a>
-        <a href="#" class="item-menu">Ofertas</a>
-    </div>
+        <a href="#" class="item-menu" data-filtro="roupas">Roupas</a>
+<a href="#" class="item-menu" data-filtro="conjuntos">Conjuntos</a>
+<a href="#" class="item-menu" data-filtro="beleza">Beleza</a>
+<a href="#" class="item-menu" data-filtro="casa">Casa</a>
+<a href="#" class="item-menu" data-filtro="produtinhos">Produtinhos</a>
+<a href="#" class="item-menu" data-filtro="ofertas">Ofertas</a>
+<a href="#" class="item-menu" data-filtro="pre-adolescentes">Pré-adolescentes</a>
 </nav>
     <img src="img/lu.jpeg" alt="Lu" class="foto-lu">
     <h1>Achadinhos da Lu</h1>
@@ -37,70 +37,23 @@
         <span class="lupa"></span>
         <input type="text" id="campo-busca" placeholder="O que você está procurando?">
     </div> 
+    <div class="atalhos-categorias">
+        <button class="categoria-atalho ativo" data-filtro="roupas"> Roupas</button>
+        <button class="categoria-atalho" data-filtro="conjuntos">Conjuntos</button>
+        <button class="categoria-atalho" data-filtro="Pré-adolescentes"> Pre-adolescentes</button>
+        <button class="categoria-atalho" data-filtro="Beleza">Beleza</button>
+        <button class="categoria-atalho" data-filtro="casa">Casa</button>
+    </div>
     <h2 class="titulo-secao">ROUPAS SHEIN</h2>
-    <section class= "produtos">
-        <div class="produto">
-
-        <img src="img/produto1.png" alt="Conjunto Feminino">
-
-        <div class="produto-info">
-            <span class="produto-categoria">CONJUNTOS</span>
-            <span class="produto-loja">SHEIN</span>
-
-            <h3>Conjunto de Moletom</h3>
-
-            <p class="produto-preco">R$ 254,90</p>
-
-            <a href="LINK-PRODUTO-1"
-               target="_blank"
-               class="botao-oferta">
-                Ver oferta
-            </a>
-        </div>
-
+    <section class="produtos" id="lista-produtos"></section>
     </div>
-        <div class="produto">
 
-        <img src="img/produto2.png" alt="Conjunto Feminino">
-        <div class="produto-info">
-            <span class="produto-categoria">CONJUNTOS</span>
-            <span class="produto-loja">SHEIN</span>
-
-            <h3>Conjunto de Moletom</h3>
-
-            <p class="produto-preco">R$ 254,90</p>
-
-            <a href="LINK-PRODUTO-1"
-               target="_blank"
-               class="botao-oferta">
-                Ver oferta
-            </a>
-        </div>
-
-    </div>
-    </div>
- <div class="produto">
-
-        <img src="img/produto3.jpeg" alt="Conjunto Feminino">
-        <div class="produto-info">
-            <span class="produto-categoria">CONJUNTOS</span>
-            <span class="produto-loja">SHEIN</span>
-
-            <h3>Conjunto Moletom Aveludado</h3>
-
-            <p class="produto-preco">R$ 227,90</p>
-
-            <a href="https://onelink.shein.com/53/62k38ewet8uq?ismg_ol=JacaJ6QgFZT_01_KOC-C"
-               target="_blank"
-               class="botao-oferta">
-                Ver oferta
-            </a>
-        </div>
-
-    </div>
-    </div>
+</div>
 </section>
-    <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/script.js"></script>   
+
 </body>
 </html>    
 
