@@ -1,57 +1,88 @@
 const botaoMenu = document.querySelector('.menu-btn');
 const menuCategorias = document.querySelector('.menu-categorias');
+
 const itensMenu = document.querySelectorAll('.item-menu');
 const atalhosCategorias = document.querySelectorAll('.categoria-atalho');
-const tituloSecao = document.querySelector('#titulo-secao');
+
+const campoBusca = document.querySelector('#campo-busca');
+
+let filtroAtual = 'todos';
+
 
 /* ABRIR E FECHAR MENU */
-botaoMenu.addEventListener('click', function () {
-    menuCategorias.classList.toggle('ativo');
-});
 
-/* FILTRAR CATEGORIAS */
-itensMenu.forEach(function(item) {
+if (botaoMenu && menuCategorias) {
 
-    item.addEventListener('click', function (event) {
+    botaoMenu.addEventListener('click', function () {
+        menuCategorias.classList.toggle('ativo');
+    });
 
-        event.preventDefault();
+}
 
-        const filtro = item.getAttribute('data-filtro');
-        atualizarTitulo(filtro);
 
-        itensMenu.forEach(function (menu) {
-            menu.classList.remove('ativo');
-        });
+/* NORMALIZAR TEXTO */
 
-        item.classList.add('ativo');
+function normalizarTexto(texto) {
 
-               cardsProdutos.forEach(function (produto) {
+    return (texto || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
 
-            const categorias = produto
-                .getAttribute('data-categoria')
-                .toLowerCase()
-                .split(' ');
+}
 
-            if (filtro === 'todos' || categorias.includes(filtro)) {
-                produto.style.display = 'block';
-            } else {
-                produto.style.display = 'none';
-            }
 
-        });
+/* FILTRAR PRODUTOS */
 
-        /* FECHA O MENU DEPOIS DE CLICAR */
-        menuCategorias.classList.remove('ativo');
+function filtrarProdutos() {
+
+    const cardsProdutos = document.querySelectorAll('.produto');
+
+    const pesquisa = campoBusca
+        ? normalizarTexto(campoBusca.value)
+        : '';
+
+    cardsProdutos.forEach(function (produto) {
+
+        const categoriaOriginal =
+            produto.getAttribute('data-categoria') || '';
+
+        const categorias =
+            normalizarTexto(categoriaOriginal).split(/\s+/);
+
+        const textoProduto =
+            normalizarTexto(produto.textContent);
+
+        const pertenceCategoria =
+            filtroAtual === 'todos' ||
+            categorias.includes(filtroAtual);
+
+        const correspondePesquisa =
+            pesquisa === '' ||
+            textoProduto.includes(pesquisa);
+
+        if (pertenceCategoria && correspondePesquisa) {
+            produto.style.display = 'block';
+        } else {
+            produto.style.display = 'none';
+        }
 
     });
-});
+
+}
+
+
+/* BOTÕES DE CATEGORIA */
+
 atalhosCategorias.forEach(function (botao) {
 
     botao.addEventListener('click', function () {
 
-        const filtro = botao.getAttribute('data-filtro');
-        atualizarTitulo(filtro);
-        const cardsProdutos = document.querySelectorAll('.produto');
+        filtroAtual =
+            normalizarTexto(
+                botao.getAttribute('data-filtro')
+            );
 
         atalhosCategorias.forEach(function (item) {
             item.classList.remove('ativo');
@@ -59,37 +90,49 @@ atalhosCategorias.forEach(function (botao) {
 
         botao.classList.add('ativo');
 
-        cardsProdutos.forEach(function (produto) {
-
-            const categorias = produto
-                .getAttribute('data-categoria')
-                .toLowerCase()
-                .split(' ');
-
-            if (filtro === 'todos' || categorias.includes(filtro)) {
-                produto.style.display = 'block';
-            } else {
-                produto.style.display = 'none';
-            }
-
-        });
+        filtrarProdutos();
 
     });
 
 });
-function atualizarTitulo(filtro) {
 
-    const titulos = {
-        todos: 'TODOS OS ACHADINHOS',
-        roupas: 'ROUPAS',
-        conjuntos: 'CONJUNTOS',
-        'pre-adolescentes': 'PRÉ-ADOLESCENTES',
-        beleza: 'BELEZA',
-        casa: 'CASA',
-        produtinhos: 'PRODUTINHOS',
-        ofertas: 'OFERTAS'
-    };
 
-    tituloSecao.textContent =
-        titulos[filtro] || 'ACHADINHOS DA LU';
+/* MENU LATERAL */
+
+itensMenu.forEach(function (item) {
+
+    item.addEventListener('click', function (event) {
+
+        event.preventDefault();
+
+        filtroAtual =
+            normalizarTexto(
+                item.getAttribute('data-filtro')
+            );
+
+        itensMenu.forEach(function (menu) {
+            menu.classList.remove('ativo');
+        });
+
+        item.classList.add('ativo');
+
+        filtrarProdutos();
+
+        if (menuCategorias) {
+            menuCategorias.classList.remove('ativo');
+        }
+
+    });
+
+});
+
+
+/* BARRA DE PESQUISA */
+
+if (campoBusca) {
+
+    campoBusca.addEventListener('input', function () {
+        filtrarProdutos();
+    });
+
 }
