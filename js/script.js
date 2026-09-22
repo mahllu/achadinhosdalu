@@ -2,7 +2,6 @@ const botaoMenu = document.querySelector('.menu-btn');
 const menuCategorias = document.querySelector('.menu-categorias');
 const itensMenu = document.querySelectorAll('.item-menu');
 const atalhosCategorias = document.querySelectorAll('.categoria-atalho');
-const cardsProdutos = document.querySelectorAll('.produto');
 const tituloSecao = document.querySelector('#titulo-secao');
 
 /* ABRIR E FECHAR MENU */
@@ -52,6 +51,7 @@ atalhosCategorias.forEach(function (botao) {
 
         const filtro = botao.getAttribute('data-filtro');
         atualizarTitulo(filtro);
+        const cardsProdutos = document.querySelectorAll('.produto');
 
         atalhosCategorias.forEach(function (item) {
             item.classList.remove('ativo');
