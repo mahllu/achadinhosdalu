@@ -3,6 +3,7 @@ const menuCategorias = document.querySelector('.menu-categorias');
 const itensMenu = document.querySelectorAll('.item-menu');
 const atalhosCategorias = document.querySelectorAll('.categoria-atalho');
 const cardsProdutos = document.querySelectorAll('.produto');
+const tituloSecao = document.querySelector('#titulo-secao');
 
 /* ABRIR E FECHAR MENU */
 botaoMenu.addEventListener('click', function () {
@@ -17,6 +18,7 @@ itensMenu.forEach(function(item) {
         event.preventDefault();
 
         const filtro = item.getAttribute('data-filtro');
+        atualizarTitulo(filtro);
 
         itensMenu.forEach(function (menu) {
             menu.classList.remove('ativo');
@@ -49,6 +51,7 @@ atalhosCategorias.forEach(function (botao) {
     botao.addEventListener('click', function () {
 
         const filtro = botao.getAttribute('data-filtro');
+        atualizarTitulo(filtro);
 
         atalhosCategorias.forEach(function (item) {
             item.classList.remove('ativo');
@@ -74,3 +77,19 @@ atalhosCategorias.forEach(function (botao) {
     });
 
 });
+function atualizarTitulo(filtro) {
+
+    const titulos = {
+        todos: 'TODOS OS ACHADINHOS',
+        roupas: 'ROUPAS',
+        conjuntos: 'CONJUNTOS',
+        'pre-adolescentes': 'PRÉ-ADOLESCENTES',
+        beleza: 'BELEZA',
+        casa: 'CASA',
+        produtinhos: 'PRODUTINHOS',
+        ofertas: 'OFERTAS'
+    };
+
+    tituloSecao.textContent =
+        titulos[filtro] || 'ACHADINHOS DA LU';
+}
