@@ -265,6 +265,74 @@ h1  {
 
     color: #111111;
     text-align: center;
+
+    /* =====================================
+   TAMANHO FINAL DOS CARDS
+===================================== */
+
+.produtos {
+    width: 94%;
+    max-width: 1200px;
+    margin: 30px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    gap: 18px;
+
+    justify-content: center;
+}
+
+.produto {
+    width: 200px;
+    border-radius: 16px;
+}
+
+.produto img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.produto-info {
+    padding: 14px;
+}
+
+.produto-categoria,
+.produto-loja {
+    font-size: 11px;
+}
+
+.produto h3 {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.produto-preco {
+    margin: 15px 0 12px;
+    font-size: 18px;
+}
+
+.botao-oferta {
+    margin-top: 12px;
+    padding: 11px;
+    font-size: 12px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .produtos {
+        grid-template-columns: repeat(3, 210px);
+        gap: 16px;
+    }
+
+    .produto {
+        width: 210px;
+        max-width: none;
+    }
+}
 }
 /* =========================
    VERSÃO PARA CELULAR
@@ -276,125 +344,91 @@ h1  {
         overflow-x: hidden;
     }
 
-    /* Foto da Lu */
     .foto-lu {
-        width: 110px;
-        height: 110px;
-        margin-top: 30px;
+        width: 82px;
+        height: 82px;
+        margin-top: 18px;
     }
 
-    /* Título principal */
     h1 {
-        font-size: 28px;
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 8px;
         text-align: center;
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
-    /* Frase abaixo do título */
     .descricao {
-        width: 90%;
-        margin: 15px auto 0;
+        width: 88%;
+        margin: 8px auto 0;
         text-align: center;
-        font-size: 15px;
-        line-height: 1.5;
+        font-size: 13px;
+        line-height: 1.35;
     }
 
-    /* Barra de pesquisa */
     .barra-busca {
-        width: 90%;
-        height: 58px;
-        margin: 35px auto 0;
-        padding: 0 20px;
+        width: 88%;
+        height: 48px;
+        margin: 22px auto 0;
+        padding: 0 16px;
         box-sizing: border-box;
+        border-radius: 22px;
     }
 
     .barra-busca input {
-        font-size: 15px;
+        font-size: 14px;
         min-width: 0;
     }
 
-    /* ROUPAS SHEIN */
-    .titulo-secao {
-        width: 90%;
-        margin: 60px auto 20px;
-        font-size: 24px;
-        text-align: left;
+    .atalhos-categorias {
+        width: 92%;
+        margin: 16px auto 0;
+        gap: 8px;
     }
 
-    /* Área dos produtos */
+    .categoria-atalho {
+        padding: 8px 13px;
+        font-size: 12px;
+        border-radius: 22px;
+    }
+
     .produtos {
-        width: 90%;
-        margin: 25px auto 50px;
-
-        grid-template-columns: 1fr;
-        gap: 30px;
-
-        justify-items: center;
+        width: 92%;
+        margin: 22px auto 35px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        justify-items: stretch;
     }
 
-    /* Cada card */
     .produto {
         width: 100%;
-        max-width: 340px;
+        max-width: none;
+        border-radius: 14px;
     }
 
-    /* Foto do produto */
-    .produto img {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-    }
-
-    /* Conteúdo do card */
     .produto-info {
-        padding: 20px;
+        padding: 11px;
+    }
+
+    .produto h3 {
+        font-size: 13px;
+        line-height: 1.25;
     }
 
     .produto-preco {
-        font-size: 21px;
+        font-size: 16px;
+        margin: 10px 0;
     }
 
     .botao-oferta {
-        width: 100%;
-        box-sizing: border-box;
+        padding: 9px 6px;
+        font-size: 11px;
+        border-radius: 10px;
     }
-}
-.atalhos-categorias {
-    width: 90%;
-    max-width: 1000px;
 
-    margin: 25px auto 0;
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 12px;
-}
-
-.categoria-atalho {
-    padding: 10px 20px;
-
-    border: 1px solid #A59281;
-    border-radius: 30px;
-
-    background-color: transparent;
-    color: #6f5e50;
-
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.categoria-atalho:hover {
-    background-color: #A59281;
-    color: white;
-}
-
-.categoria-atalho.ativo {
-    background-color: #A59281;
-    color: white;
+    .menu-btn {
+        top: 14px;
+        left: 14px;
+        font-size: 20px;
+    }
 }
