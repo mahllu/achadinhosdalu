@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head> 
 <body>
+    <!-- FAIXA DE BOAS-VINDAS -->
+
+<div class="faixa-boas-vindas">
+    ✦ Seus próximos achadinhos favoritos estão aqui ✦
+</div>
     <button class="menu-btn">☰</button>
     <nav class="menu-categorias">
-
     <div class="menu-topo">
         <h2>Categorias</h2>
     </div>
@@ -34,12 +38,105 @@
 </nav>
     <img src="img/lu.jpeg" alt="Lu" class="foto-lu">
     <h1>Achadinhos da Lu</h1>
-    <p class="descricao">Aqui voce encontra diversos produtos, roupas e achadinhos para o dia a dia. Bora aproveitar as ofertas?
+    <p class="descricao">
+    <strong>Seu próximo achadinho favorito está aqui! ♡</strong>
+    <br>
+    Looks, acessórios e descobertas irresistíveis
+    da Shopee e da SHEIN.
+    Escolha sua loja e vem garimpar! ✨
+</p>
+    <!-- LOGOS DAS LOJAS -->
+<div class="logos-lojas">
+    <a href="#vitrine-shopee">
+        <img src="img/shopee.png" alt="Shopee">
+    </a>
+
+    <a href="#vitrine-shein">
+      <img src="img/shein.png" alt="SHEIN">
+    </a>
+</div>
     <div class="barra-busca">
         <span class="lupa"></span>
         <input type="text" id="campo-busca" placeholder="O que você está procurando?">
     </div> 
-    <section class="produtos" id="lista-produtos"></section>
+    <!-- CATEGORIAS -->
+
+<!-- VITRINE SHOPEE -->
+
+<div class="linha-loja">
+    <div class="linha"></div>
+
+    <div class="card-loja">
+        <h2>SHOPEE♡</h2>
+        <p>Seus achadinhos favoritos em um só lugar!</p>
+    </div>
+
+    <div class="linha"></div>
+</div>
+
+    <div class="atalhos-categorias">
+
+        <button class="categoria-atalho ativo" data-filtro="todos">Todos</button>
+
+        <button class="categoria-atalho" data-filtro="tenis">Tênis</button>
+
+        <button class="categoria-atalho" data-filtro="acessorios">Acessórios</button>
+
+        <button class="categoria-atalho" data-filtro="bijuterias">Bijuterias</button>
+
+        <button class="categoria-atalho" data-filtro="roupas">Roupas</button>
+
+        <button class="categoria-atalho" data-filtro="vestidos">Vestidos</button>
+
+        <button class="categoria-atalho" data-filtro="casa">Casa</button>
+
+        <button class="categoria-atalho" data-filtro="beleza">Beleza</button>
+
+    </div>
+
+    <section class="produtos" id="lista-produtos-shopee"></section>
+
+</section>
+
+
+<!-- VITRINE SHEIN -->
+
+<section class="vitrine-loja" data-loja="shein">
+
+  <div class="linha-loja">
+    <div class="linha"></div>
+
+    <div class="card-loja">
+        <h2>SHEIN♡</h2>
+        <p>Seus achadinhos favoritos em um só lugar!</p>
+    </div>
+
+    <div class="linha"></div>
+</div>>
+</div>
+    <div class="atalhos-categorias">
+
+        <button class="categoria-atalho ativo" data-filtro="todos">Todos</button>
+
+        <button class="categoria-atalho" data-filtro="tenis">Tênis</button>
+
+        <button class="categoria-atalho" data-filtro="acessorios">Acessórios</button>
+
+        <button class="categoria-atalho" data-filtro="bijuterias">Bijuterias</button>
+
+        <button class="categoria-atalho" data-filtro="roupas">Roupas</button>
+
+        <button class="categoria-atalho" data-filtro="vestidos">Vestidos</button>
+
+        <button class="categoria-atalho" data-filtro="casa">Casa</button>
+
+        <button class="categoria-atalho" data-filtro="beleza">Beleza</button>
+
+    </div>
+
+    <section class="produtos" id="lista-produtos-shein"></section>
+
+</section>
     </div>
 
 </div>

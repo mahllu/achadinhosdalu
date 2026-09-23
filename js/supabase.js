@@ -19,11 +19,25 @@ async function buscarProdutos() {
         return;
     }
 
-    const listaProdutos = document.querySelector('#lista-produtos');
+    const listaShopee = document.querySelector('#lista-produtos-shopee');
+const listaShein = document.querySelector('#lista-produtos-shein');
 
-    listaProdutos.innerHTML = '';
+listaShopee.innerHTML = '';
+listaShein.innerHTML = '';
 
     data.forEach(function (produto) {
+        const loja = (produto.loja || '').trim().toLowerCase();
+
+let listaProdutos;
+
+if (loja.includes('shopee')) {
+    listaProdutos = listaShopee;
+} else if (loja.includes('shein')) {
+    listaProdutos = listaShein;
+} else {
+    console.warn('Loja não reconhecida:', produto.loja);
+    return;
+}
 
         const precoFormatado = Number(produto.preco).toLocaleString(
             'pt-BR',
