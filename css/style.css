@@ -940,3 +940,16 @@ h1 {
         line-height: 1.3;
     }
 }
+/* NAVEGAÇÃO SUAVE DAS LOGOS */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.vitrine-loja {
+    scroll-margin-top: 25px;
+}
+
+.logos-lojas a {
+    cursor: pointer;
+}
