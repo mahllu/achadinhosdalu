@@ -29,7 +29,61 @@ modal.addEventListener('click', function (event) {
     }
 });
 
+async function carregarEstatisticasVisitas() {
+    carregarRankingProdutos();
+    const visitasTotal = document.querySelector('#visitas-total');
+    const visitasHoje = document.querySelector('#visitas-hoje');
 
+    // VISITAS TOTAIS
+    const { count: total, error: erroTotal } = await supabasePainel
+        .from('visitas')
+        .select('*', { count: 'exact', head: true });
+
+    if (erroTotal) {
+        console.error('Erro ao buscar visitas totais:', erroTotal);
+    } else {
+        visitasTotal.textContent = total || 0;
+      // CLIQUES NOS PRODUTOS
+const cliquesTotal = document.querySelector('#cliques-total');
+
+const { count: totalCliques, error: erroCliques } = await supabasePainel
+    .from('cliques')
+    .select('*', { count: 'exact', head: true });
+
+if (erroCliques) {
+    console.error('Erro ao buscar cliques:', erroCliques);
+} else {
+    cliquesTotal.textContent = totalCliques || 0;
+}  
+    }
+
+    // VISITAS DE HOJE
+    const agora = new Date();
+
+    const inicioHoje = new Date(
+        agora.getFullYear(),
+        agora.getMonth(),
+        agora.getDate()
+    );
+
+    const inicioAmanha = new Date(
+        agora.getFullYear(),
+        agora.getMonth(),
+        agora.getDate() + 1
+    );
+
+    const { count: hoje, error: erroHoje } = await supabasePainel
+        .from('visitas')
+        .select('*', { count: 'exact', head: true })
+        .gte('created_at', inicioHoje.toISOString())
+        .lt('created_at', inicioAmanha.toISOString());
+
+    if (erroHoje) {
+        console.error('Erro ao buscar visitas de hoje:', erroHoje);
+    } else {
+        visitasHoje.textContent = hoje || 0;
+    }
+}
 async function verificarLogin() {
     const { data } = await supabasePainel.auth.getSession();
 
@@ -42,7 +96,90 @@ async function verificarLogin() {
 }
 
 verificarLogin();
+async function carregarRankingProdutos() {
+    const rankingLista = document.querySelector('#ranking-produtos');
 
+    const { data: cliques, error: erroCliques } = await supabasePainel
+        .from('cliques')
+        .select('produto_id');
+
+    if (erroCliques) {
+        console.error('Erro ao carregar ranking:', erroCliques);
+        rankingLista.innerHTML = '<p>Não foi possível carregar o ranking.</p>';
+        return;
+    }
+
+    if (!cliques || cliques.length === 0) {
+        rankingLista.innerHTML =
+            '<p class="ranking-carregando">Ainda não há cliques registrados ♡</p>';
+        return;
+    }
+
+    // Conta quantos cliques cada produto recebeu
+    const contagem = {};
+
+    cliques.forEach(function (clique) {
+        const id = clique.produto_id;
+
+        if (!id) return;
+
+        contagem[id] = (contagem[id] || 0) + 1;
+    });
+
+    const idsProdutos = Object.keys(contagem);
+
+    const { data: produtos, error: erroProdutos } = await supabasePainel
+        .from('produtos')
+        .select('id, nome, imagem_url, loja')
+        .in('id', idsProdutos);
+
+    if (erroProdutos) {
+        console.error('Erro ao buscar produtos do ranking:', erroProdutos);
+        return;
+    }
+
+    const ranking = produtos
+        .map(function (produto) {
+            return {
+                ...produto,
+                cliques: contagem[produto.id] || 0
+            };
+        })
+        .sort(function (a, b) {
+            return b.cliques - a.cliques;
+        })
+        .slice(0, 5);
+
+    rankingLista.innerHTML = '';
+
+    ranking.forEach(function (produto, index) {
+        rankingLista.innerHTML += `
+            <div class="item-ranking">
+
+                <span class="posicao-ranking">
+                    ${index + 1}º
+                </span>
+
+                <img
+                    src="${produto.imagem_url}"
+                    alt="${produto.nome}"
+                    class="imagem-ranking"
+                >
+
+                <div class="info-ranking">
+                    <strong>${produto.nome}</strong>
+                    <span>${produto.loja}</span>
+                </div>
+
+                <div class="cliques-ranking">
+                    ♡ ${produto.cliques}
+                    <small>cliques</small>
+                </div>
+
+            </div>
+        `;
+    });
+}
 async function carregarProdutos() {
 
     const { data, error } = await supabasePainel

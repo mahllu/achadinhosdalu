@@ -953,3 +953,102 @@ html {
 .logos-lojas a {
     cursor: pointer;
 }
+.menu-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+
+    padding: 16px 20px 4px;
+}
+
+.menu-principal a {
+    color: #6F6460;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-principal a:hover,
+.menu-principal a.ativo {
+    color: #A59281;
+    border-bottom-color: #A59281;
+}
+
+@media (max-width: 768px) {
+    .menu-principal {
+        gap: 16px;
+        padding: 13px 10px 2px;
+    }
+
+    .menu-principal a {
+        font-size: 11px;
+    }
+}
+/* RODAPÉ PADRÃO */
+
+.rodape-site {
+    margin-top: 80px;
+    padding: 38px 20px;
+
+    text-align: center;
+
+    background: #A59281;
+    color: #FFFFFF;
+}
+
+.rodape-site strong {
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.rodape-frase {
+    margin: 7px 0 12px;
+    font-size: 12px;
+}
+
+.aviso-afiliados {
+    max-width: 620px;
+    margin: 0 auto 15px;
+
+    font-size: 10px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.rodape-site .links-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.rodape-site .links-rodape a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.rodape-site .links-rodape a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    .rodape-site {
+        margin-top: 55px;
+        padding: 30px 18px;
+    }
+
+    .rodape-site strong {
+        font-size: 18px;
+    }
+
+    .aviso-afiliados {
+        font-size: 9px;
+    }
+}

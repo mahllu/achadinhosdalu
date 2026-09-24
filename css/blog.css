@@ -1,0 +1,1027 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F7F4F2;
+    color: #2F292C;
+    font-family: Arial, sans-serif;
+}
+
+/* TOPO */
+
+.topo-blog {
+    width: 100%;
+    padding: 22px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #FFFFFF;
+    border-bottom: 1px solid #E7DEDA;
+}
+
+.marca {
+    text-decoration: none;
+    color: #2F292C;
+
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.menu-blog {
+    display: flex;
+    gap: 24px;
+}
+
+.menu-blog a {
+    text-decoration: none;
+    color: #746B6E;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.menu-blog a.ativo {
+    color: #A59281;
+}
+
+/* APRESENTAÇÃO */
+
+.hero-blog {
+    width: 88%;
+    max-width: 900px;
+
+    margin: 70px auto 55px;
+    text-align: center;
+}
+
+.mini-titulo {
+    color: #A59281;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-blog h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    line-height: 1.15;
+
+    max-width: 760px;
+    margin: 18px auto;
+}
+
+.hero-blog p {
+    max-width: 590px;
+    margin: auto;
+
+    color: #766E71;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* DESTAQUE */
+
+.destaque-blog {
+    width: 88%;
+    max-width: 1100px;
+
+    margin: 0 auto 80px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    background: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.imagem-destaque {
+    min-height: 420px;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #D9CBDD,
+            #EEE5F1
+        );
+}
+
+.imagem-destaque span {
+    padding: 8px 12px;
+
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+
+    color: #655A68;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.texto-destaque {
+    padding: 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categoria-post {
+    color: #A59281;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.texto-destaque h2 {
+    margin: 12px 0 16px;
+
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.texto-destaque p {
+    color: #7D7477;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.botao-ler {
+    width: fit-content;
+
+    margin-top: 25px;
+    padding: 11px 18px;
+
+    background: #A59281;
+    color: #FFFFFF;
+
+    border-radius: 22px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* POSTS */
+
+.area-posts {
+    width: 88%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.titulo-posts {
+    margin-bottom: 28px;
+}
+
+.titulo-posts span {
+    color: #A59281;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.titulo-posts h2 {
+    margin-top: 6px;
+
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.grid-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.post-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+}
+
+.post-imagem {
+    height: 210px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #E9DFEA,
+            #DCCDE2
+        );
+}
+
+.post-conteudo {
+    padding: 20px;
+}
+
+.post-conteudo span {
+    color: #A59281;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.post-conteudo h3 {
+    margin: 10px 0;
+
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.post-conteudo p {
+    color: #81787B;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.post-conteudo a {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #A59281;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* RODAPÉ */
+
+.rodape-blog {
+    margin-top: 90px;
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #A59281;
+    color: #FFFFFF;
+}
+
+.rodape-blog strong {
+    font-family: Georgia, serif;
+    font-size: 21px;
+}
+
+.rodape-blog p {
+    margin-top: 8px;
+
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .topo-blog {
+        padding: 16px 18px;
+    }
+
+    .marca {
+        font-size: 17px;
+    }
+
+    .menu-blog {
+        gap: 13px;
+    }
+
+    .menu-blog a {
+        font-size: 11px;
+    }
+
+    .hero-blog {
+        width: 90%;
+        margin: 45px auto 35px;
+    }
+
+    .hero-blog h1 {
+        font-size: 31px;
+    }
+
+    .hero-blog p {
+        font-size: 13px;
+    }
+
+    .destaque-blog {
+        width: 90%;
+        grid-template-columns: 1fr;
+        margin-bottom: 55px;
+    }
+
+    .imagem-destaque {
+        min-height: 240px;
+    }
+
+    .texto-destaque {
+        padding: 25px;
+    }
+
+    .texto-destaque h2 {
+        font-size: 25px;
+    }
+
+    .grid-posts {
+        grid-template-columns: 1fr;
+    }
+
+    .post-imagem {
+        height: 220px;
+    }
+
+    .titulo-posts h2 {
+        font-size: 26px;
+    }
+
+}
+/* =========================
+   MATÉRIA - ACHADOS DA SEMANA
+========================= */
+
+.materia {
+    width: 88%;
+    max-width: 1050px;
+    margin: 45px auto 80px;
+}
+
+.voltar-blog {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #9A887B;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.materia-topo {
+    max-width: 780px;
+    margin-bottom: 55px;
+}
+
+.materia-topo h1 {
+    font-family: Georgia, serif;
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 14px 0 18px;
+    color: #2F292C;
+}
+
+.materia-topo p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #746D70;
+}
+
+/* CADA PRODUTO */
+
+.item-materia {
+    display: grid;
+    grid-template-columns: 55px 330px 1fr;
+    gap: 28px;
+    align-items: center;
+
+    padding: 35px 0;
+    border-top: 1px solid #E7DEDA;
+}
+
+.numero-item {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: #B29D8D;
+    font-weight: 700;
+}
+
+.imagem-item {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #EDE6E2;
+    border-radius: 18px;
+
+    color: #9C9294;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.texto-item h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    line-height: 1.25;
+    margin: 9px 0 13px;
+}
+
+.texto-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #766F72;
+}
+
+.texto-item .botao-ler {
+    margin-top: 18px;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .materia {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    .materia-topo {
+        margin-bottom: 35px;
+    }
+
+    .materia-topo h1 {
+        font-size: 31px;
+    }
+
+    .materia-topo p {
+        font-size: 13px;
+    }
+
+    .item-materia {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 28px 0;
+    }
+
+    .numero-item {
+        font-size: 23px;
+    }
+
+    .imagem-item {
+        max-width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+
+    .texto-item h2 {
+        font-size: 22px;
+    }
+
+    .texto-item p {
+        font-size: 13px;
+    }
+}
+/* ESPAÇO DO BOTÃO VER PRODUTO */
+
+.texto-item .botao-ler {
+    display: inline-block;
+    margin-top: 24px;
+}
+/* INFORMAÇÕES DO PRODUTO NA MATÉRIA */
+
+.info-produto-blog {
+    margin-top: 20px;
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-produto-blog strong {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #A59281;
+}
+
+.info-produto-blog span {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #2F292C;
+}
+
+.info-produto-blog small {
+    font-size: 12px;
+    color: #81787B;
+}
+
+.aviso-preco {
+    display: block;
+    margin-top: 10px;
+
+    font-size: 10px;
+    line-height: 1.4;
+    color: #A09A9C;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .info-produto-blog {
+        margin-top: 16px;
+        margin-bottom: 14px;
+    }
+
+    .info-produto-blog span {
+        font-size: 19px;
+    }
+
+    .info-produto-blog small {
+        font-size: 11px;
+    }
+
+    .aviso-preco {
+        font-size: 9px;
+    }
+}
+/* CARROSSEL DOS PRODUTOS */
+
+.carrossel-produto {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+
+    background: #ffffff;
+    border-radius: 18px;
+}
+
+.carrossel-faixa {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    transition: transform 0.6s ease;
+}
+
+.carrossel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+.carrossel-bolinhas {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 6px;
+
+    padding: 6px 9px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+}
+
+.bolinha {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #d7ccc5;
+    cursor: pointer;
+}
+
+.bolinha.ativa {
+    background: #A59281;
+}
+/* =========================
+   PÁGINA SOBRE
+========================= */
+
+.pagina-sobre {
+    width: 88%;
+    max-width: 900px;
+    margin: 60px auto 80px;
+}
+
+.sobre-intro {
+    max-width: 760px;
+    margin-bottom: 45px;
+}
+
+.sobre-intro h1 {
+    font-family: Georgia, serif;
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 14px 0 18px;
+    color: #2F292C;
+}
+
+.sobre-destaque {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #5F5659;
+    max-width: 680px;
+}
+
+.sobre-texto {
+    max-width: 760px;
+}
+
+.sobre-texto h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin: 38px 0 14px;
+    color: #2F292C;
+}
+
+.sobre-texto p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #746D70;
+    margin-bottom: 16px;
+}
+
+.sobre-final {
+    margin-top: 60px;
+    padding: 35px;
+
+    background: #F0E7E2;
+    border-radius: 22px;
+
+    text-align: center;
+}
+
+.sobre-final span {
+    display: block;
+    font-size: 24px;
+    color: #A59281;
+    margin-bottom: 8px;
+}
+
+.sobre-final h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+/* LINKS DO RODAPÉ */
+
+.links-rodape {
+    margin-top: 16px;
+
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.links-rodape a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.links-rodape a:hover {
+    text-decoration: underline;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .pagina-sobre {
+        width: 90%;
+        margin: 40px auto 60px;
+    }
+
+    .sobre-intro {
+        margin-bottom: 30px;
+    }
+
+    .sobre-intro h1 {
+        font-size: 32px;
+    }
+
+    .sobre-destaque {
+        font-size: 15px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    .sobre-texto p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .sobre-final {
+        padding: 25px 18px;
+        margin-top: 40px;
+    }
+
+    .sobre-final h2 {
+        font-size: 22px;
+    }
+}
+/* =========================
+   PÁGINA DE CONTATO
+========================= */
+
+.pagina-contato {
+    width: 88%;
+    max-width: 900px;
+    margin: 60px auto 80px;
+}
+
+.contato-intro {
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.contato-intro h1 {
+    font-family: Georgia, serif;
+    font-size: 46px;
+    margin: 14px 0 16px;
+}
+
+.contato-intro p {
+    color: #746D70;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.contatos-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.contato-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 24px;
+
+    background: #FFFFFF;
+    border: 1px solid #E9E0DC;
+    border-radius: 18px;
+
+    color: #2F292C;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.contato-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.05);
+}
+
+.contato-icone {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F0E7E2;
+    border-radius: 50%;
+
+    color: #A59281;
+    font-size: 20px;
+
+    flex-shrink: 0;
+}
+
+.contato-card small {
+    color: #A59281;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.contato-card h2 {
+    margin: 5px 0;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.contato-card p {
+    margin: 0;
+    color: #8A8184;
+    font-size: 12px;
+}
+
+.contato-final {
+    margin-top: 35px;
+    text-align: center;
+
+    color: #8A8184;
+    font-size: 13px;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .pagina-contato {
+        width: 90%;
+        margin: 40px auto 60px;
+    }
+
+    .contato-intro h1 {
+        font-size: 32px;
+    }
+
+    .contato-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .contato-icone {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contato-card h2 {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .contato-card p {
+        font-size: 10px;
+    }
+}
+/* =========================
+   POLÍTICA DE PRIVACIDADE
+========================= */
+
+.pagina-politica {
+    width: 88%;
+    max-width: 900px;
+    margin: 60px auto 80px;
+}
+
+.politica-intro {
+    max-width: 760px;
+    margin-bottom: 45px;
+}
+
+.politica-intro h1 {
+    font-family: Georgia, serif;
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 14px 0 16px;
+    color: #2F292C;
+}
+
+.politica-intro p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #746D70;
+}
+
+.politica-intro small {
+    display: block;
+    margin-top: 14px;
+    color: #A09A9C;
+    font-size: 11px;
+}
+
+.politica-texto {
+    max-width: 760px;
+}
+
+.politica-texto h2 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    margin: 34px 0 12px;
+    color: #2F292C;
+}
+
+.politica-texto p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #746D70;
+    margin-bottom: 14px;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .pagina-politica {
+        width: 90%;
+        margin: 40px auto 60px;
+    }
+
+    .politica-intro h1 {
+        font-size: 31px;
+    }
+
+    .politica-intro p {
+        font-size: 13px;
+    }
+
+    .politica-texto h2 {
+        font-size: 20px;
+        margin-top: 28px;
+    }
+
+    .politica-texto p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+/* RODAPÉ PADRÃO */
+
+.rodape-site {
+    margin-top: 80px;
+    padding: 38px 20px;
+
+    text-align: center;
+
+    background: #A59281;
+    color: #FFFFFF;
+}
+
+.rodape-site strong {
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.rodape-frase {
+    margin: 7px 0 12px;
+    font-size: 12px;
+}
+
+.aviso-afiliados {
+    max-width: 620px;
+    margin: 0 auto 15px;
+
+    font-size: 10px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.rodape-site .links-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.rodape-site .links-rodape a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.rodape-site .links-rodape a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    .rodape-site {
+        margin-top: 55px;
+        padding: 30px 18px;
+    }
+
+    .rodape-site strong {
+        font-size: 18px;
+    }
+
+    .aviso-afiliados {
+        font-size: 9px;
+    }
+}

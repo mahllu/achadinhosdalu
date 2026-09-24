@@ -29,6 +29,21 @@ async function registrarVisita() {
 registrarVisita();
 
 console.log('Supabase conectado!');
+async function registrarClique(produtoId) {
+    const { error } = await supabaseClient
+        .from('cliques')
+        .insert([
+            {
+                produto_id: produtoId
+            }
+        ]);
+
+    if (error) {
+        console.error('Erro ao registrar clique:', error);
+    } else {
+        console.log('Clique registrado!');
+    }
+}
 async function buscarProdutos() {
 
     const { data, error } = await supabaseClient
@@ -91,11 +106,13 @@ if (loja.includes('shopee')) {
                         ${precoFormatado}
                     </p>
 
-                    <a
-                        href="${produto.link_afiliado}"
-                        target="_blank"
-                        class="botao-oferta"
-                    >
+    <a
+    href="${produto.link_afiliado}"
+    target="_blank"
+    class="botao-oferta"
+    onclick="registrarClique(${produto.id})"
+>
+
                         Ver oferta
                     </a>
 

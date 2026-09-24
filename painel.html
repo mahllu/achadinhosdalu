@@ -321,6 +321,162 @@
         font-size: 10px;
     }
 }
+/* RANKING DOS PRODUTOS */
+
+.ranking-produtos {
+    background: #FFFFFF;
+    border: 1px solid #EADFEB;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.035);
+}
+
+.ranking-cabecalho {
+    margin-bottom: 20px;
+}
+
+.ranking-etiqueta {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #A59281;
+    font-weight: 700;
+}
+
+.ranking-cabecalho h2 {
+    margin: 6px 0 5px;
+    font-size: 24px;
+}
+
+.ranking-cabecalho p {
+    margin: 0;
+    font-size: 13px;
+    color: #8D878A;
+}
+
+.ranking-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ranking-carregando {
+    font-size: 13px;
+    color: #A09AA0;
+    margin: 0;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .ranking-produtos {
+        padding: 16px;
+        border-radius: 16px;
+        margin-bottom: 25px;
+    }
+
+    .ranking-cabecalho h2 {
+        font-size: 19px;
+    }
+
+    .ranking-cabecalho p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+}
+/* ITENS DO RANKING */
+
+.item-ranking {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 10px 12px;
+    border: 1px solid #F0E8E4;
+    border-radius: 14px;
+
+    background: #FCFBFB;
+}
+
+.imagem-ranking {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.posicao-ranking {
+    width: 28px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #A59281;
+    flex-shrink: 0;
+}
+
+.info-ranking {
+    flex: 1;
+    min-width: 0;
+}
+
+.info-ranking strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.info-ranking span {
+    font-size: 11px;
+    color: #999;
+}
+
+.cliques-ranking {
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: #A59281;
+}
+
+.cliques-ranking small {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    color: #999;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .item-ranking {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .imagem-ranking {
+        width: 48px;
+        height: 48px;
+        border-radius: 9px;
+    }
+
+    .posicao-ranking {
+        width: 22px;
+        font-size: 12px;
+    }
+
+    .info-ranking strong {
+        font-size: 12px;
+    }
+
+    .info-ranking span {
+        font-size: 9px;
+    }
+
+    .cliques-ranking {
+        font-size: 12px;
+    }
+}
     </style>
 </head>
 
@@ -340,31 +496,47 @@
 <section class="estatisticas">
 
     <div class="card-estatistica">
-        <span>👁️ Visitas totais</span>
+        <span>Visitas totais</span>
         <h2 id="visitas-total">—</h2>
         <p>Desde o início</p>
     </div>
 
     <div class="card-estatistica">
-        <span>💗 Cliques nos produtos</span>
+        <span>Cliques nos produtos</span>
         <h2 id="cliques-total">—</h2>
         <p>Cliques nos links</p>
     </div>
 
     <div class="card-estatistica">
-        <span>📅 Visitas de hoje</span>
+        <span>Visitas de hoje</span>
         <h2 id="visitas-hoje">—</h2>
         <p>Acessos de hoje</p>
     </div>
 
     <div class="card-estatistica">
-        <span>🛍️ Produtos cadastrados</span>
+        <span>Produtos cadastrados</span>
         <h2 id="produtos-total">—</h2>
         <p>Produtos na vitrine</p>
     </div>
 
 </section>
+<!-- PRODUTOS MAIS CLICADOS -->
 
+<section class="ranking-produtos">
+
+    <div class="ranking-cabecalho">
+        <div>
+            <span class="ranking-etiqueta">DESEMPENHO</span>
+            <h2>Produtos mais clicados ♡</h2>
+            <p>Veja quais achadinhos estão chamando mais atenção.</p>
+        </div>
+    </div>
+
+    <div class="ranking-lista" id="ranking-produtos">
+        <p class="ranking-carregando">Carregando ranking...</p>
+    </div>
+
+</section>
         <div class="cabecalho-painel">
 
             <h2>Produtos cadastrados</h2>
