@@ -12,8 +12,10 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
 <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
+    
+
+      </Section>
 
     <style>
         * {
@@ -253,6 +255,72 @@
         font-size: 13px;
     }
 }
+/* ESTATÍSTICAS DO PAINEL */
+
+.estatisticas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.card-estatistica {
+    background: #FFFFFF;
+    border: 1px solid #EADFEB;
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.035);
+    min-width: 0;
+}
+
+.card-estatistica span {
+    display: block;
+    color: #756777;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.card-estatistica h2 {
+    color: #A59281;
+    font-size: 32px;
+    margin: 15px 0 8px;
+}
+
+.card-estatistica p {
+    color: #A09AA0;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+
+    .estatisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .card-estatistica {
+        padding: 14px 12px;
+        border-radius: 14px;
+    }
+
+    .card-estatistica span {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .card-estatistica h2 {
+        font-size: 25px;
+        margin: 10px 0 6px;
+    }
+
+    .card-estatistica p {
+        font-size: 10px;
+    }
+}
     </style>
 </head>
 
@@ -267,6 +335,35 @@
     </header>
 
     <main class="conteudo">
+        <!-- ESTATÍSTICAS DO PAINEL -->
+
+<section class="estatisticas">
+
+    <div class="card-estatistica">
+        <span>👁️ Visitas totais</span>
+        <h2 id="visitas-total">—</h2>
+        <p>Desde o início</p>
+    </div>
+
+    <div class="card-estatistica">
+        <span>💗 Cliques nos produtos</span>
+        <h2 id="cliques-total">—</h2>
+        <p>Cliques nos links</p>
+    </div>
+
+    <div class="card-estatistica">
+        <span>📅 Visitas de hoje</span>
+        <h2 id="visitas-hoje">—</h2>
+        <p>Acessos de hoje</p>
+    </div>
+
+    <div class="card-estatistica">
+        <span>🛍️ Produtos cadastrados</span>
+        <h2 id="produtos-total">—</h2>
+        <p>Produtos na vitrine</p>
+    </div>
+
+</section>
 
         <div class="cabecalho-painel">
 

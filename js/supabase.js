@@ -4,6 +4,29 @@ const supabaseClient = supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
+async function registrarVisita() {
+    const hoje = new Date().toLocaleDateString('pt-BR');
+    const ultimaVisita = localStorage.getItem('ultima-visita-achadinhos');
+
+    // Não conta várias atualizações da mesma pessoa no mesmo dia
+    if (ultimaVisita === hoje) {
+        return;
+    }
+
+    const { error } = await supabaseClient
+        .from('visitas')
+        .insert([{}]);
+
+    if (error) {
+        console.error('Erro ao registrar visita:', error);
+        return;
+    }
+
+    localStorage.setItem('ultima-visita-achadinhos', hoje);
+    console.log('Visita registrada!');
+}
+
+registrarVisita();
 
 console.log('Supabase conectado!');
 async function buscarProdutos() {

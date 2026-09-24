@@ -35,11 +35,13 @@ async function verificarLogin() {
 
     if (!data.session) {
         window.location.href = 'admin.html';
+        return;
     }
+
+    carregarEstatisticasVisitas();
 }
 
 verificarLogin();
-
 
 async function carregarProdutos() {
 
@@ -52,7 +54,11 @@ async function carregarProdutos() {
         console.error('Erro ao carregar produtos:', error);
         return;
     }
+    const produtosTotal = document.querySelector('#produtos-total');
 
+if (produtosTotal) {
+    produtosTotal.textContent = data.length;
+}
     listaProdutos.innerHTML = '';
 
     data.forEach(function (produto) {
