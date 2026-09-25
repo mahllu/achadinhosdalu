@@ -1025,3 +1025,357 @@ body {
         font-size: 9px;
     }
 }
+/* ==================================
+   MATÉRIA MAIS COMPACTA NO CELULAR
+================================== */
+
+@media (max-width: 480px) {
+
+    /* TOPO */
+
+    .topo-blog {
+        padding: 14px 12px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .marca {
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .menu-blog {
+        width: 100%;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .menu-blog a {
+        font-size: 10px;
+    }
+
+    /* MATÉRIA */
+
+    .materia {
+        width: 90%;
+        margin: 25px auto 50px;
+    }
+
+    .voltar-blog {
+        font-size: 11px;
+        margin-bottom: 22px;
+    }
+
+    .materia-topo {
+        margin-bottom: 28px;
+    }
+
+    .materia-topo .mini-titulo {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .materia-topo h1 {
+        font-size: 27px;
+        line-height: 1.12;
+        margin: 10px 0 14px;
+    }
+
+    .materia-topo p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* PRODUTOS DA MATÉRIA */
+
+    .item-materia {
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    .numero-item {
+        font-size: 20px;
+    }
+
+    .carrossel-produto {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+        border-radius: 14px;
+    }
+
+    .texto-item {
+        transform: none;
+    }
+
+    .texto-item h2 {
+        font-size: 20px;
+        line-height: 1.2;
+        margin: 8px 0 10px;
+    }
+
+    .texto-item p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .texto-item .botao-ler {
+        margin-top: 18px;
+        padding: 10px 16px;
+        font-size: 11px;
+    }
+
+    .info-produto-blog span {
+        font-size: 18px;
+    }
+
+    .info-produto-blog small {
+        font-size: 10px;
+    }
+}
+@media (max-width: 480px) {
+
+    .materia {
+        width: 88%;
+        margin-top: 20px;
+    }
+
+    .voltar-blog {
+        font-size: 10px;
+        margin-bottom: 18px;
+    }
+
+    .materia-topo {
+        margin-bottom: 22px;
+    }
+
+    .materia-topo .mini-titulo {
+        font-size: 8px;
+    }
+
+    .materia-topo h1 {
+        font-size: 23px;
+        line-height: 1.1;
+        margin: 8px 0 12px;
+    }
+
+    .materia-topo p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .item-materia {
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .numero-item {
+        font-size: 18px;
+    }
+
+    .carrossel-produto {
+        max-width: 225px;
+    }
+
+    .texto-item h2 {
+        font-size: 18px;
+        line-height: 1.18;
+    }
+
+    .texto-item p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .info-produto-blog {
+        margin-top: 12px;
+        margin-bottom: 10px;
+    }
+
+    .info-produto-blog span {
+        font-size: 16px;
+    }
+
+    .info-produto-blog small {
+        font-size: 9px;
+    }
+
+    .texto-item .botao-ler {
+        margin-top: 14px;
+        padding: 8px 14px;
+        font-size: 10px;
+    }
+
+}
+/* SOBRE - MAIS COMPACTO NO CELULAR */
+
+@media (max-width: 480px) {
+
+    .pagina-sobre {
+        width: 88%;
+        margin: 28px auto 50px;
+    }
+
+    .sobre-intro {
+        margin-bottom: 22px;
+    }
+
+    .sobre-intro .mini-titulo {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .sobre-intro h1 {
+        font-size: 27px;
+        line-height: 1.1;
+        margin: 10px 0 14px;
+    }
+
+    .sobre-destaque {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .sobre-texto h2 {
+        font-size: 19px;
+        line-height: 1.2;
+        margin: 25px 0 10px;
+    }
+
+    .sobre-texto p {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .sobre-final {
+        margin-top: 30px;
+        padding: 20px 15px;
+    }
+
+    .sobre-final h2 {
+        font-size: 19px;
+    }
+}
+/* CONTATO - MAIS COMPACTO NO CELULAR */
+
+@media (max-width: 480px) {
+
+    .pagina-contato {
+        width: 88%;
+        margin: 28px auto 50px;
+    }
+
+    .contato-intro {
+        margin-bottom: 26px;
+    }
+
+    .contato-intro .mini-titulo {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .contato-intro h1 {
+        font-size: 27px;
+        line-height: 1.1;
+        margin: 10px 0 13px;
+    }
+
+    .contato-intro p {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .contatos-grid {
+        gap: 10px;
+    }
+
+    .contato-card {
+        padding: 12px;
+        gap: 10px;
+        border-radius: 13px;
+    }
+
+    .contato-icone {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .contato-card small {
+        font-size: 8px;
+    }
+
+    .contato-card h2 {
+        font-size: 13px;
+        line-height: 1.25;
+        margin: 3px 0;
+        overflow-wrap: anywhere;
+    }
+
+    .contato-card p {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    .contato-final {
+        margin-top: 24px;
+        font-size: 11px;
+    }
+}
+/* PRIVACIDADE - MESMO PADRÃO DO CONTATO NO CELULAR */
+
+@media (max-width: 480px) {
+
+    .pagina-politica {
+        width: 88%;
+        margin: 28px auto 50px;
+    }
+
+    .politica-intro {
+        margin-bottom: 26px;
+    }
+
+    .politica-intro .mini-titulo {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .politica-intro h1 {
+        font-size: 27px;
+        line-height: 1.1;
+        margin: 10px 0 13px;
+    }
+
+    .politica-intro p {
+        font-size: 11px;
+        line-height: 1.55;
+    }
+
+    .politica-intro small {
+        font-size: 9px;
+        margin-top: 10px;
+    }
+
+    .politica-texto h2 {
+        font-size: 18px;
+        line-height: 1.2;
+        margin: 24px 0 9px;
+    }
+
+    .politica-texto p {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-bottom: 11px;
+    }
+
+    .pagina-politica .sobre-final {
+        margin-top: 30px;
+        padding: 20px 15px;
+    }
+
+    .pagina-politica .sobre-final h2 {
+        font-size: 19px;
+    }
+}

@@ -1052,3 +1052,48 @@ html {
         font-size: 9px;
     }
 }
+/* MENU HAMBÚRGUER - VISUAL NOVO */
+
+.menu-categorias {
+    background: #FFFFFF;
+    color: #2F292C;
+}
+
+/* TÍTULOS */
+
+.menu-categorias h2,
+.menu-categorias h3 {
+    color: #2F292C;
+}
+
+/* LINKS */
+
+.menu-link {
+    display: block;
+
+    padding: 12px 16px;
+    margin: 5px 0;
+
+    color: #5F5659;
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    transition: 0.2s ease;
+}
+
+/* PASSAR O MOUSE */
+
+.menu-link:hover {
+    background: #A59281;
+    color: #FFFFFF;
+}
+
+/* LINK ATIVO */
+
+.menu-link.ativo {
+    background: #A59281;
+    color: #FFFFFF;
+}
